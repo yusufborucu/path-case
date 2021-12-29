@@ -1,0 +1,242 @@
+{
+	"info": {
+		"_postman_id": "7e424498-6ace-4366-9fd6-d4aa00d3ec2c",
+		"name": "path-case",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"jack\",\r\n    \"lastName\": \"london\",\r\n    \"username\": \"jacklondon\",\r\n    \"email\": \"jacklondon@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"jacklondon\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/login_check",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login_check"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2NDA3MTU1NDAsImV4cCI6MTY0MDcxOTE0MCwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiamFja2xvbmRvbiJ9.RzwF8tPpp8ENFwBCvS01xXyRymA5tmjPPd3U6Tqo-aTPrnm6MSa7iebALuNvf2V0hJ6kJoGsfws_deDhFh4gU6hPSbE27tp-VjNVcs-Z1xQ9Akk4ZZyZeZmKYRHYp6g8cXEYbLgDDssrcsK2x-wbPcmgWuF07tuGL2pp4ugspzd6K7d0sMrEn9Qo6OPRGZ4P4Ks5qUb0phYbZPoxYvfPNimGhFwiLh7Egk1FnTAQIqkTn_sMZ7M2x9potsausDa3j9znQbKM5Qh72emIe-3RwncY3rnHoZvz80ApPX7zOoRvCOn7jMg_yov219xsMZQyAysQIcjVoSjp185VKoguVQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productId\": 21,\r\n    \"quantity\": 10,\r\n    \"address\": \"sakarya\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/order/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"order",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all orders",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2NDA3MTU1NDAsImV4cCI6MTY0MDcxOTE0MCwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiamFja2xvbmRvbiJ9.RzwF8tPpp8ENFwBCvS01xXyRymA5tmjPPd3U6Tqo-aTPrnm6MSa7iebALuNvf2V0hJ6kJoGsfws_deDhFh4gU6hPSbE27tp-VjNVcs-Z1xQ9Akk4ZZyZeZmKYRHYp6g8cXEYbLgDDssrcsK2x-wbPcmgWuF07tuGL2pp4ugspzd6K7d0sMrEn9Qo6OPRGZ4P4Ks5qUb0phYbZPoxYvfPNimGhFwiLh7Egk1FnTAQIqkTn_sMZ7M2x9potsausDa3j9znQbKM5Qh72emIe-3RwncY3rnHoZvz80ApPX7zOoRvCOn7jMg_yov219xsMZQyAysQIcjVoSjp185VKoguVQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/order/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"order",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2NDA3MTU1NDAsImV4cCI6MTY0MDcxOTE0MCwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiamFja2xvbmRvbiJ9.RzwF8tPpp8ENFwBCvS01xXyRymA5tmjPPd3U6Tqo-aTPrnm6MSa7iebALuNvf2V0hJ6kJoGsfws_deDhFh4gU6hPSbE27tp-VjNVcs-Z1xQ9Akk4ZZyZeZmKYRHYp6g8cXEYbLgDDssrcsK2x-wbPcmgWuF07tuGL2pp4ugspzd6K7d0sMrEn9Qo6OPRGZ4P4Ks5qUb0phYbZPoxYvfPNimGhFwiLh7Egk1FnTAQIqkTn_sMZ7M2x9potsausDa3j9znQbKM5Qh72emIe-3RwncY3rnHoZvz80ApPX7zOoRvCOn7jMg_yov219xsMZQyAysQIcjVoSjp185VKoguVQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/order/get/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"order",
+						"get",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2NDA3MTU1NDAsImV4cCI6MTY0MDcxOTE0MCwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiamFja2xvbmRvbiJ9.RzwF8tPpp8ENFwBCvS01xXyRymA5tmjPPd3U6Tqo-aTPrnm6MSa7iebALuNvf2V0hJ6kJoGsfws_deDhFh4gU6hPSbE27tp-VjNVcs-Z1xQ9Akk4ZZyZeZmKYRHYp6g8cXEYbLgDDssrcsK2x-wbPcmgWuF07tuGL2pp4ugspzd6K7d0sMrEn9Qo6OPRGZ4P4Ks5qUb0phYbZPoxYvfPNimGhFwiLh7Egk1FnTAQIqkTn_sMZ7M2x9potsausDa3j9znQbKM5Qh72emIe-3RwncY3rnHoZvz80ApPX7zOoRvCOn7jMg_yov219xsMZQyAysQIcjVoSjp185VKoguVQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productId\": 22,\r\n    \"quantity\": 20,\r\n    \"address\": \"serdivan/sakarya\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/order/update/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"order",
+						"update",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2NDA3MTU1NDAsImV4cCI6MTY0MDcxOTE0MCwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiamFja2xvbmRvbiJ9.RzwF8tPpp8ENFwBCvS01xXyRymA5tmjPPd3U6Tqo-aTPrnm6MSa7iebALuNvf2V0hJ6kJoGsfws_deDhFh4gU6hPSbE27tp-VjNVcs-Z1xQ9Akk4ZZyZeZmKYRHYp6g8cXEYbLgDDssrcsK2x-wbPcmgWuF07tuGL2pp4ugspzd6K7d0sMrEn9Qo6OPRGZ4P4Ks5qUb0phYbZPoxYvfPNimGhFwiLh7Egk1FnTAQIqkTn_sMZ7M2x9potsausDa3j9znQbKM5Qh72emIe-3RwncY3rnHoZvz80ApPX7zOoRvCOn7jMg_yov219xsMZQyAysQIcjVoSjp185VKoguVQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/order/delete/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"order",
+						"delete",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
